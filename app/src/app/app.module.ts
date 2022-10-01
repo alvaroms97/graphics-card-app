@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphicsCardListContainerComponent } from './graphics-card-list-container/graphics-card-list-container.component';
 import { GraphicsCardDetailComponent } from './graphics-card-detail/graphics-card-detail.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GraphicsCardDetailComponent } from './graphics-card-detail/graphics-car
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
