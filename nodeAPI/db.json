@@ -16,5 +16,68 @@
         "price": "1689.00",
         "memory": "24",
         "memoryType": "GDDR6X"
+    },
+    {
+        "name": "AMD Radeon",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/1002/10023570/1118-msi-amd-radeon-rx-6500-xt-mech-2x-oc-4gb-gddr6.jpg",
+        "manufacturer": "MSI",
+        "model": "RX 6500 XT MECH 2X OC",
+        "price": "243.98",
+        "memory": "4",
+        "memoryType": "GDDR6"
+    },
+    {
+        "name": "AMD Radeon",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/83/838262/1967-sapphire-pulse-amd-radeon-rx-6500xt-gaming-oc-4gb-gddr6.jpg",
+        "manufacturer": "Sapphire",
+        "model": "RX 6500XT Gaming OC",
+        "price": "264.66",
+        "memory": "4",
+        "memoryType": "GDDR6"
+    },
+    {
+        "name": "ROG Strix GeForce",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/43/434666/136-asus-rog-strix-geforce-rtx-3070-v2-oc-edition-lhr-8gb-gddr6.jpg",
+        "manufacturer": "Asus",
+        "model": "RTX 3070 V2 OC Edition LHR",
+        "price": "929.26",
+        "memory": "8",
+        "memoryType": "GDDR6"
+    },
+    {
+        "name": "AMD Radeon",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/34/346794/1191-gigabyte-amd-radeon-rx-6800-xt-gaming-oc-16gb-gddr6.jpg",
+        "manufacturer": "Gigabyte",
+        "model": "RX 6800 XT GAMING OC",
+        "price": "1142.17",
+        "memory": "16",
+        "memoryType": "GDDR6"
+    },
+    {
+        "name": "AMD Radeon",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/35/350030/1498-gigabyte-aorus-radeon-rx-6800-master-16gb-gddr6.jpg",
+        "manufacturer": "Gigabyte AORUS",
+        "model": "Radeon RX 6800 MASTER",
+        "price": "1323.42",
+        "memory": "16",
+        "memoryType": "GDDR6"
+    },
+    {
+        "name": "GeForce",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/31/317592/161-gigabyte-geforce-rtx-3090-eagle-oc-24g-24gb-gddr6x.jpg",
+        "manufacturer": "Gigabyte",
+        "model": "RTX 3090 Eagle OC 24G",
+        "price": "2809.28",
+        "memory": "24",
+        "memoryType": "GDDR6X"
+    },
+    {
+        "name": "AMD Radeon",
+        "image": "https://thumb.pccomponentes.com/w-530-530/articles/83/837459/1846-msi-radeon-rx-6800-xt-gaming-z-trio-16gb-gddr6.jpg",
+        "manufacturer": "MSI",
+        "model": "RX 6800 XT GAMING Z TRIO",
+        "price": "769.90",
+        "memory": "16",
+        "memoryType": "GDDR6"
     }
 ]
