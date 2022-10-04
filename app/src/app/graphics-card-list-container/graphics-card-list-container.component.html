@@ -1,1 +1,3 @@
 <p>graphics-card-list-container works!</p>
+
+<h1 *ngFor="let card of $cards | async">{{card.name}} {{card.model}}</h1>

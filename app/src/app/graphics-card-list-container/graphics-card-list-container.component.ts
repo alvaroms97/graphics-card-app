@@ -1,4 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { GraphicsCardsService } from './../../services/graphics-cards.service';
+import { GraphicsCard } from './../../models/graphicsCard.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-graphics-card-list-container',
@@ -8,9 +11,17 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class GraphicsCardListContainerComponent implements OnInit {
 
-  constructor() { }
+  $cards: Observable<GraphicsCard[]> = new Observable();
+
+  constructor(public graphicsCardsSv: GraphicsCardsService) {
+    this.$cards = graphicsCardsSv.getAll();
+  }
 
   ngOnInit(): void {
+  }
+
+  getOne() {
+
   }
 
 }
