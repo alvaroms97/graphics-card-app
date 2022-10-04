@@ -14,14 +14,14 @@ app.get("/graphics-cards", (req, res, next) => {
 
         if (req.query.numResults != null && req.query.numResults != undefined && req.query.numResults > 0) {
             // Exists the query param "numResults" so we set it as the number of entries per page
-            numOfEntriesPerPage = req.query.numResults;
+            numOfEntriesPerPage = parseInt(req.query.numResults);
         }
 
         // Makes calculations about pagination and saves them in variables
-        var totalPages = db.length / numOfEntriesPerPage < 1 ? 1 : db.length / numOfEntriesPerPage;
+        var totalPages = Math.ceil(db.length / numOfEntriesPerPage) < 1 ? 1 : Math.ceil(db.length / numOfEntriesPerPage);
 
         // Normalization of the page number request
-        var pageSelected = req.query.page;
+        var pageSelected = parseInt(req.query.page) || 1;
         if (pageSelected < 1) {
             pageSelected = 1;
         } else if (pageSelected > totalPages) {
@@ -29,12 +29,13 @@ app.get("/graphics-cards", (req, res, next) => {
         }
 
         var firstElementIndex = pageSelected * numOfEntriesPerPage - numOfEntriesPerPage;
+        var lastElementIndex = firstElementIndex + numOfEntriesPerPage > db.length ? db.length : firstElementIndex + numOfEntriesPerPage;
 
         // Slices the db, returns the entries and then they are saved in entriesList
-        var entriesList = db.slice(firstElementIndex, firstElementIndex + numOfEntriesPerPage - 1);
+        var entriesList = db.slice(firstElementIndex, lastElementIndex);
 
         // Finally we build the object result with the entries data and the pagination info
-        var resultObj = {data: entriesList, paginationInfo: {pageCurrent: pageSelected, pageTotal: totalPages, entriesCurrent: numOfEntriesPerPage, entriesTotal: db.length}}
+        var resultObj = {data: entriesList, paginationInfo: {pageCurrent: pageSelected, pageTotal: totalPages, entriesCurrent: entriesList.length, entriesTotal: db.length}}
 
         res.json(resultObj);
     } else {
