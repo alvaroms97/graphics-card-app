@@ -7,8 +7,6 @@ app.use(cors({
     origin: 'http://localhost:4200'
 }));
 
-// Defines response obj for the get request with params of pagination
-var getGraphicsCardsObj = { data: null, paginationInfo: { pageCurrent: 0, pageTotal: 0, entriesCurrent: 0, entriesTotal: 0 } };
 // Defines the default num of entries per page. It will be changed if there is "numResults" as a query param
 var getGraphicsCardsNumEntriesPerPage = 3;
 
@@ -57,7 +55,8 @@ app.get("/graphics-cards", (req, res, next) => {
         res.json(resultObj);
     } else {
         // Query was executed without pagination params nor search params, so it sends the full array of elements
-        res.json(db);
+        var resultObj = { data: db, paginationInfo: { pageCurrent: 1, pageTotal: 1, entriesCurrent: db.length, entriesTotal: db.length } }
+        res.json(resultObj);
     }
 });
 
