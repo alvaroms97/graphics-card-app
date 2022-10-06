@@ -1,0 +1,52 @@
+.container {
+  max-width: unset;
+  padding: 20px;
+}
+
+.row {
+  margin: unset;
+  min-height: 100%;
+  height: min-content;
+}
+
+.wr-column {
+  padding: 20px 20px 40px 20px;
+}
+
+div.col > div {
+  height: 100%;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.wr-stick-1 {
+  position: sticky;
+  height: 700px;
+  top: 15px;
+}
+
+.wr-stick-2 {
+  position: sticky;
+  height: 400px;
+  top: 15px;
+}
+
+#cont-1 {
+  background-color: rgba(cornflowerblue, 0.2);
+  border-radius: 5px;
+}
+
+#cont-2 {
+  background-color: white;
+  border-radius: 5px;
+  padding: 40px 20px 20px 20px;
+
+  @media (min-width: "1368px") {
+    padding: 40px 120px 20px 120px;
+  }
+}
+
+#cont-3 {
+  background-color: rgba(rgb(168, 178, 195), 0.3);
+  border-radius: 5px;
+}

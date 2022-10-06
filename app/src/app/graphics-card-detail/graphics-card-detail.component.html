@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="wr-column wr-stick-1 col d-none d-xl-block">
+      <div id="cont-1"></div>
+    </div>
+    <div class="wr-column col col-12 col-md-8 col-xl-7">
+      <div id="cont-2">
+        <h2 class="mb-3">Graphics Card details</h2>
+        <div class="row" *ngIf="this.card">
+          <div class="col-12 col-md-6 col-xl-4">
+            <img [src]="card.image">
+          </div>
+          <div class="col">
+            <h4>{{card.name}}</h4>
+            <p>{{card.model}}</p>
+            <p>{{card.manufacturer | uppercase}}</p>
+            <h2>{{card.price}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wr-column wr-stick-2 col col-md d-none d-md-block">
+      <div id="cont-3"></div>
+    </div>
+  </div>
+</div>
