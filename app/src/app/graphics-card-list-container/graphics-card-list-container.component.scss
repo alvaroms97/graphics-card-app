@@ -1,0 +1,88 @@
+.container {
+  max-width: unset;
+  padding: 20px;
+}
+
+.row {
+  margin: unset;
+  min-height: 100%;
+  height: min-content;
+}
+
+.wr-column {
+  padding: 20px 20px 40px 20px;
+}
+
+div.col > div {
+  height: 100%;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.wr-stick-1 {
+  position: sticky;
+  height: 700px;
+  top: 15px;
+}
+
+.wr-stick-2 {
+  position: sticky;
+  height: 400px;
+  top: 15px;
+}
+
+#cont-1 {
+  background-color: rgba(cornflowerblue, 0.2);
+  border-radius: 5px;
+}
+
+#cont-2 {
+  background-color: rgba(rgb(168, 178, 195), 0.1);
+  border-radius: 5px;
+  padding: 40px 20px 20px 20px;
+
+  @media (min-width: "1368px") {
+    padding: 40px 120px 20px 120px;
+  }
+}
+
+#cont-3 {
+  background-color: rgba(rgb(168, 178, 195), 0.3);
+  border-radius: 5px;
+}
+
+.card-el {
+  cursor: pointer;
+  margin: 20px 0;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  height: min-content;
+  min-height: 110px;
+  transition: transform background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.card-el:hover {
+  transform: scale(1.1);
+  background-color: white;
+  transition: transform background-color;
+  transition-duration: 50ms;
+  transition-timing-function: ease-out;
+}
+
+.input-el {
+  width: 100%;
+  max-width: 400px;
+}
+
+.thmb {
+  min-width: 60px;
+  width: 30%;
+  max-width: 200px;
+  height: min-content;
+  background-color: white;
+  border-radius: 100px;
+  overflow: hidden;
+}

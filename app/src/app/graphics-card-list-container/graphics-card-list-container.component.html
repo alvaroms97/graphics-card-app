@@ -1,3 +1,43 @@
-<p>graphics-card-list-container works!</p>
-
-<h1 *ngFor="let card of $cards | async">{{card.name}} {{card.model}}</h1>
+<div class="container" infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollUpDistance]="2"
+  [infiniteScrollThrottle]="300" (scrolled)="onScrollDown($event)" [scrollWindow]="true">
+  <div class="row">
+    <div class="wr-column wr-stick-1 col d-none d-xl-block">
+      <div id="cont-1"></div>
+    </div>
+    <div class="wr-column col col-12 col-md-8 col-xl-7">
+      <div id="cont-2">
+        <h2 class="mb-3">Cards List</h2>
+        <form class="form-inline">
+          <div class="form-group mb-2 form-div">
+            <label for="inputSearch" class="h6 mb-3">You can search by name, model or manufacturer.</label>
+            <p class="small">If you want to search by item ID, write it and click the button "Search by ID"</p>
+            <div>
+              <input type="text" class="form-control d-inline input-el me-3 mb-3" id="searchInput"
+                placeholder="Search term" (keyup)="keyUp.next($event)">
+              <button type="button" class="btn btn-primary d-inline mb-1 me-2">Search</button>
+              <button type="button" class="btn btn-primary d-inline mb-1" (click)="searchId()">Search by ID</button>
+            </div>
+          </div>
+        </form>
+        <div class="card-list">
+          <div class="card-el p-2 p-md-4 d-flex" *ngFor="let card of $cards | async" (click)="goToDetails(card.id)">
+            <div class="thmb me-3 me-sm-5 p-1 p-lg-4 my-auto"><img class="w-100" src="{{card.image}}"></div>
+            <div class="w-100">
+              <h4>{{card.name}}</h4>
+              <p>{{card.model}}</p>
+              <p>{{card.manufacturer | uppercase}}</p>
+              <h6 class="d-none d-md-block">CLICK TO SEE MORE DETAILS AND PRICE</h6>
+            </div>
+          </div>
+          <div class="w-100 d-flex p-5" *ngIf="$isLoadingList | async">
+            <div class="spinner-border text-primary d-flex m-auto" style="width: 3rem; height: 3rem;" role="status">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wr-column wr-stick-2 col col-md d-none d-md-block">
+      <div id="cont-3"></div>
+    </div>
+  </div>
+</div>

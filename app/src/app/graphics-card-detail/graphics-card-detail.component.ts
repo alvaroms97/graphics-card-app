@@ -1,4 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject, debounceTime } from 'rxjs';
+import { GraphicsCard } from 'src/models/graphicsCard.model';
+import { GraphicsCardsService } from 'src/services/graphics-cards.service';
 
 @Component({
   selector: 'app-graphics-card-detail',
@@ -7,10 +11,18 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./graphics-card-detail.component.scss']
 })
 export class GraphicsCardDetailComponent implements OnInit {
+  card = new GraphicsCard();
+  $isLoading: Subject<boolean> = new Subject();
+  id: string = "";
 
-  constructor() { }
+  constructor(public graphicsCardsSv: GraphicsCardsService, public route: ActivatedRoute) {
+    this.id = this.route.snapshot.paramMap.get('id')!;
+    console.log(this.card);
 
-  ngOnInit(): void {
+    this.graphicsCardsSv.getOne(this.id).subscribe(x => this.card = x);
   }
 
+  ngOnInit(): void {
+
+  }
 }

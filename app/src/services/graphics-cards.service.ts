@@ -11,7 +11,7 @@ export class GraphicsCardsService {
 
   constructor() { }
 
-  getAll(): Observable<GraphicsCard[]> {
+  getAll(): Observable<GraphicsCardList> {
     const data$ = fromFetch('http://localhost:3000/graphics-cards', {
       selector: response => response.json()
     });
