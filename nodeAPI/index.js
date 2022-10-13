@@ -3,9 +3,7 @@ var app = express();
 var db = require("./db.json");
 
 const cors = require('cors');
-app.use(cors({
-    origin: 'http://localhost:4200'
-}));
+app.use(cors());
 
 // Defines the default num of entries per page. It will be changed if there is "numResults" as a query param
 var getGraphicsCardsNumEntriesPerPage = 3;
