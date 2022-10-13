@@ -11,15 +11,13 @@ import { GraphicsCardsService } from 'src/services/graphics-cards.service';
   styleUrls: ['./graphics-card-detail.component.scss']
 })
 export class GraphicsCardDetailComponent implements OnInit {
-  card = new GraphicsCard();
+  $card: Subject<GraphicsCard> = new Subject();
   $isLoading: Subject<boolean> = new Subject();
   id: string = "";
 
   constructor(public graphicsCardsSv: GraphicsCardsService, public route: ActivatedRoute) {
     this.id = this.route.snapshot.paramMap.get('id')!;
-    console.log(this.card);
-
-    this.graphicsCardsSv.getOne(this.id).subscribe(x => this.card = x);
+    this.graphicsCardsSv.getOne(this.id).subscribe(x => {this.$card.next(x);});
   }
 
   ngOnInit(): void {
