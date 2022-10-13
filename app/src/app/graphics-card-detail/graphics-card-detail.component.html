@@ -1,26 +1,74 @@
-<div class="container">
-  <div class="row">
-    <div class="wr-column wr-stick-1 col d-none d-xl-block">
-      <div id="cont-1"></div>
-    </div>
-    <div class="wr-column col col-12 col-md-8 col-xl-7">
-      <div id="cont-2">
-        <h2 class="mb-3">Graphics Card details</h2>
-        <div class="row" *ngIf="this.card">
-          <div class="col-12 col-md-6 col-xl-4">
-            <img [src]="card.image">
+<div class="row cnt">
+  <div class="wr-column wr-stick-1 col d-none d-xl-block">
+    <div id="cont-1"></div>
+  </div>
+  <div class="wr-column col col-12 col-md-8 col-xl-7">
+    <div id="cont-2">
+      <h2 class="mb-3 text-secondary">Product Details</h2>
+      <div *ngIf="this.$card | async as card">
+        <h5 class="mb-4">{{card.name}} {{card.model}} {{card.memory}}GB {{card.memoryType}}</h5>
+        <div class="row">
+          <div class="col-12 col-md-6 col-xl-6 me-4 mb-3">
+            <img [src]="card.image" class="w-100">
           </div>
-          <div class="col">
-            <h4>{{card.name}}</h4>
-            <p>{{card.model}}</p>
-            <p>{{card.manufacturer | uppercase}}</p>
-            <h2>{{card.price}}</h2>
+          <div class="col h-100 my-auto">
+            <p>
+              <span class="text-secondary">CARD TYPE</span><br>
+              {{card.name}}
+            </p>
+            <p>
+              <span class="text-secondary">MODEL</span><br>
+              {{card.model}}
+            </p>
+            <p>
+              <span class="text-secondary">MANUFACTURER</span><br>
+              {{card.manufacturer | uppercase}}
+            </p>
+
+            <span class="text-secondary">PRICE</span>
+            <h2>{{card.price | currency: 'EUR':'symbol':'.2-2':'es' }}</h2>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div id="additional-details">
+            <h6 class="aditional-details">Additional Details</h6>
+            <hr class="aditional-details mt-2">
+            <div class="row g-0">
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">MEMORY</span><br>
+                {{card.memory}} GB
+              </div>
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">MEMORY TYPE</span><br>
+                {{card.memoryType}}
+              </div>
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">FORM FACTOR</span><br>
+                PC Desktop
+              </div>
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">CONNECTIVITY</span><br>
+                Unknown
+              </div>
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">4K SUPPORTED</span><br>
+                Yes
+              </div>
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">CLOCK SPEED</span><br>
+                Unknown
+              </div>
+              <div class="mb-3 pe-3 col-12 col-sm-6">
+                <span class="text-secondary">EXTRA FEATURES</span><br>
+                Unknown
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="wr-column wr-stick-2 col col-md d-none d-md-block">
-      <div id="cont-3"></div>
-    </div>
+  </div>
+  <div class="wr-column wr-stick-2 col col-md d-none d-md-block">
+    <div id="cont-3"></div>
   </div>
 </div>

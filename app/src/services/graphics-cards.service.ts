@@ -24,21 +24,20 @@ export class GraphicsCardsService {
     return data$;
   }
 
-  getOne(id: string): Observable<GraphicsCard> {
+  getOne(id: string): Observable<any> {
     let url = 'http://localhost:3000/graphics-cards' + '?id=' + id;
     const data$ = fromFetch(url, {
       selector: response => response.json()
     });
 
     data$.subscribe({
-      error: error => console.log(error),
       next: result => result
     });
 
     return data$;
   }
 
-  getPageWithSearch(pageNumber: number, searchTerm?: string, entriesPerPage?: number): Observable<GraphicsCardList> {
+  getPageWithSearch(pageNumber: number, searchTerm?: string, entriesPerPage = 3): Observable<GraphicsCardList> {
     let url = 'http://localhost:3000/graphics-cards' + '?page=' + pageNumber;
 
     // If there is search param, it will try to find those that have its name, model or manufacturer matching the string (optional)

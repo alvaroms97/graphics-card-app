@@ -1,5 +1,4 @@
-.container {
-  max-width: unset;
+.cnt {
   padding: 20px;
 }
 
@@ -21,14 +20,14 @@ div.col > div {
 
 .wr-stick-1 {
   position: sticky;
-  height: 700px;
-  top: 15px;
+  height: 650px;
+  top: 20px;
 }
 
 .wr-stick-2 {
   position: sticky;
-  height: 400px;
-  top: 15px;
+  height: 400px !important;
+  top: 20px;
 }
 
 #cont-1 {
@@ -39,7 +38,10 @@ div.col > div {
 #cont-2 {
   background-color: rgba(rgb(168, 178, 195), 0.1);
   border-radius: 5px;
-  padding: 40px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
+  height: min-content !important;
+  overflow-y: visible;
+  width: 100%;
 
   @media (min-width: "1368px") {
     padding: 40px 120px 20px 120px;
